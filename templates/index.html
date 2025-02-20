@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Powered Legal Awareness System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+<body>
+    <header>
+        <h1>AI Powered Legal Awareness System</h1>
+        <nav>
+            <a href="#" onclick="showHomePage()">Home</a>
+            <a href="#" onclick="showLoginPage()">Login</a>
+            <a href="#" onclick="showFeedbackForm()">Feedback</a>
+            <a href="#" onclick="showContactSection()">Contact</a>
+            <a href="#" onclick="openAdminView()">Admin</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div id="admin-password-section" class="hidden">
+            <h2>Enter Admin Password</h2>
+            <input type="password" id="admin-password-input" placeholder="Enter Admin Password" required>
+            <button onclick="validateAdminPassword()">Submit</button>
+        </div>
+        <div id="admin-results-section" class="hidden">
+            <div id="admin-user-list"></div>
+        </div>
+        
+        <div id="about-section">
+            <h2 style="font-size:large;">What does this webpage do?</h2>
+            <ul>
+                <li>Once you log in, you can enter your problem statement here in clear and unambiguous words.</li>
+                <li>Once the problem statement is submitted, you will be provided the top 5 IPC sections that are most relevant to your case.</li>
+                <li>You can also know about the IPC sections with probable illustrations.</li>
+                <li>You can also know whether those are bailable or not.</li>
+                <li>You can also know the punishment or fine that comes under that IPC section.</li>
+            </ul>
+        </div>
+
+        <!-- Login Section -->
+        <div id="login-section" class="hidden">
+            <center><h2>Login or Sign Up</h2></center>
+            <div id="choice-section">
+                <button onclick="showLoginForm()">Existing User</button>
+                <button onclick="showSignupForm()">New User</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form-section" class="hidden">
+                <form id="login-form">
+                    <input id="login-email" type="email" placeholder="Email" required>
+                    <input id="login-password" type="password" placeholder="Password" required>
+                    <button type="submit" onclick="loginUser(event)">Log In</button>
+                </form>
+            </div>
+
+            <!-- Sign-up Form -->
+            <div id="signup-form-section" class="hidden">
+                <form id="signup-form">
+                    <input id="signup-first-name" type="text" placeholder="First Name" required>
+                    <input id="signup-last-name" type="text" placeholder="Last Name" required>
+                    <input id="signup-email" type="email" placeholder="Email" required>
+                    <input id="signup-password" type="password" placeholder="Password" required>
+                    <input id="signup-mobile" type="text" placeholder="Mobile Number" required>
+                    <button type="submit" onclick="registerUser(event)">Sign Up</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="problem-section" class="hidden">
+            <h2>Enter Your Problem</h2>
+            <form id="problem-form" onsubmit="submitProblem(event)" method="POST" action="/get_relevant_sections">
+                <textarea id="user_input" name="user_input" placeholder="Describe your problem statement here..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="result-section" class="hidden">
+                <h2>Results</h2>
+                <p id="results"></p>
+            </div>
+        </div>
+
+        <div id="feedback-section" class="hidden">
+            <h2>We Value Your Feedback</h2>
+            <p>Your feedback helps us improve our system. Please share your experience with us.</p>
+
+            <form class="form-section" onsubmit="submitFeedback(event)">
+                <!-- Rating System -->
+                <label for="rating">Rate Your Experience:</label>
+
+                <!-- Email and Feedback Message -->
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" placeholder="Enter your email ID" required />
+
+                <label for="message">Your Feedback:</label>
+                <textarea id="message" placeholder="Enter your feedback or suggestions here" required></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+
+        <div id="contact-section" class="hidden">
+            <h2>Contact Us</h2>
+            <div class="contact-section">
+                <div class="contact-card">
+                    <p><strong>Tummalapalli Sai Hemanth</strong></p>
+                    <p>9059372271</p>
+                </div>
+                <div class="contact-card">
+                    <p><strong>Tirumanagiri Siva Sai Prasad</strong></p>
+                    <p>9121389322</p>
+                </div>
+                <div class="contact-card">
+                    <p><strong>Nimmala Venkata Satya Sai</strong></p>
+                    <p>6300127712</p>
+                </div>
+                <div class="contact-card">
+                    <p><strong>Seelam Madhu Ratnam</strong></p>
+                    <p>9676398277</p>
+                </div>
+                <div class="contact-card">
+                    <p><strong>Undavalli Lokesh Satyanarayana</strong></p>
+                    <p>9177595909</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer>
+        <p>&copy; 2025 AI Powered Legal Awareness System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

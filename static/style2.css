@@ -1,0 +1,507 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #0056b3;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease-in-out;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 20px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  color: #ffcc00;
+  transform: scale(1.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  flex: 1;
+  margin-top: 25px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  background-color: #0056b3;
+  color: #ffffff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0.3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+button {
+  background: #ffcc00;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #ffaa00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#about-section {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  margin: 10px auto;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+#about-section:hover {
+  transform: scale(1.02);
+}
+
+#about-section h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#about-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+#about-section li {
+  font-size: 15px;
+  margin: 6px 0;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+#about-section li:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Choice Section */
+#choice-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#choice-section button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 48%;
+}
+
+#choice-section button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Form Sections */
+#login-form-section, #signup-form-section {
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#login-form-section form, #signup-form-section form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#login-section h2,
+#login-form-section input,
+#signup-form-section input,
+#login-form-section button[type="submit"],
+#signup-form-section button[type="submit"] {
+  color: black; /* Ensures text inside input fields and buttons is visible */
+}
+
+#login-form-section input::placeholder,
+#signup-form-section input::placeholder {
+  color: #666; /* Dark gray for better visibility */
+}
+
+#login-form-section input, #signup-form-section input {
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+#login-form-section input:focus, #signup-form-section input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#login-form-section button[type="submit"], #signup-form-section button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#login-form-section button[type="submit"]:hover, #signup-form-section button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+#login-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  padding: 25px;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  color: #333;
+}
+
+#login-section h2 {
+  font-size: 26px;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+#problem-form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#problem-form h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#problem-form textarea {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  resize: none;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+#problem-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#problem-form button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: auto;
+  margin-top: 15px;
+  white-space: nowrap;
+}
+
+#problem-form button:hover {
+  background: #0056b3;
+}
+
+/* Card container */
+#results {
+  display: flex;
+  flex-direction: column; /* Stack the cards vertically */
+  gap: 30px;
+  padding: 20px;
+  align-items: center; /* Center the cards horizontally */
+}
+
+/* Individual card style */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 90%; /* Make the card take up 90% of the container's width */
+  max-width: 800px; /* Limit the maximum width */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  overflow: hidden; /* Ensure overflow content is handled */
+  box-sizing: border-box; /* Ensure padding doesn't affect card size */
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card title style */
+.card h3,
+.card h4 {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  color: white;
+}
+
+/* Styling paragraphs */
+.card p {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Highlighting important labels */
+.card p strong {
+  font-weight: bold;
+  color: #007bff;
+}
+
+#admin-password-section, #admin-results-section, #about-section, #login-section, #problem-section, #feedback-section, #contact-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Feedback Section */
+#feedback-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#feedback-section h2 {
+  font-size: 26px;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+#feedback-section textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  transition: border-color 0.3s;
+}
+
+#feedback-section textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#feedback-section button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#feedback-section button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.form-section input,
+.form-section textarea,
+.form-section button {
+  display: block;
+  margin: 10px 0;
+  padding: 12px;
+  width: 100%;
+  max-width: 500 px;
+  border: 1px solid #ced;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-section input:focus,
+.form-section textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-section button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-section button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.contact-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Admin Section */
+#admin-password-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#admin-password-section h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+#admin-password-section input {
+  width: autopx;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  resize: none;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+#admin-password-section button:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#admin-password-section button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: auto;
+  margin-top: 15px;
+  white-space: nowrap;
+}
+
+#admin-password-section button:hover {
+  background: #0056b3;
+}
